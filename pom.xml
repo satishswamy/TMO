@@ -6,8 +6,15 @@
   <packaging>war</packaging>
   <name>TMO</name>
   <description>TMO</description>
+  <dependencies>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.0.1</version>
+        <scope>provided</scope>
+</dependency></dependencies>
   <build>
-    <sourceDirectory>src</sourceDirectory>
+      <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
