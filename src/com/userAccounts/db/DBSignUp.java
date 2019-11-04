@@ -10,7 +10,7 @@ public class DBSignUp {
 	public boolean DbAccess(String userId , String password) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/userdb","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/userdb","root","");
 			String query = " insert into users (userid, password)"
 			        + " values (?, ?)";
 			PreparedStatement preparedStatement = con.prepareStatement(query);
