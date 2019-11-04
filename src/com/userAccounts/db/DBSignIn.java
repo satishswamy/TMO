@@ -16,7 +16,7 @@ public class DBSignIn {
 		ResultSet result = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://52.2.220.72/userdb","root","");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/userdb","root","");
 			String query = "select password from users where userid=(?)";
 			PreparedStatement preparedStatement = con.prepareStatement(query);
 			preparedStatement.setString(1,userId);
