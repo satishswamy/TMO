@@ -19,10 +19,10 @@ public class SignInServlet extends HttpServlet {
 		DBSignIn dbSignIn = new DBSignIn();
 		boolean result = dbSignIn.DbAccess(userId, password);
 		if (result) {
-			System.out.println("Account Created");
+			System.out.println("Login successfull");
 			resp.sendRedirect("welcome.html");
 		} else {
-			System.out.println("Account creation Failed");
+			System.out.println("Login error");
 			resp.sendRedirect("fail.html");
 		}
 	}

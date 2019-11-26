@@ -10,23 +10,24 @@ public class DBSignUp {
 	public boolean DbAccess(String userId , String password) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userdb","root","");
+			Connection con = DriverManager.getConnection("jdbc:mysql://3.81.131.19/db","root","123");
 			String query = " insert into users (userid, password)"
 			        + " values (?, ?)";
 			PreparedStatement preparedStatement = con.prepareStatement(query);
 			preparedStatement.setString(1,userId);
 			preparedStatement.setString(2,password);
-			preparedStatement.executeUpdate();			
+			preparedStatement.executeUpdate();		
+			return true;
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			//return false;
+			return false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			//return false;
+			return false;
 		}
-		return false;
+		//return false;
 	}
 
 }
